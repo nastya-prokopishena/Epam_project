@@ -87,7 +87,6 @@
         align-items: center;
         padding-top: -100px;
         padding-bottom: 100px;
-        margin-bottom: 30px;
         
         &-name {
             margin-top: 285px;
@@ -168,6 +167,7 @@
 .hamburger-menu {
     display: none;
 }
+
 @media screen and (max-width: 1200px) {
     .header {
         &__top {
@@ -179,14 +179,18 @@
             }
         }
         &__content {
-            height: 120vh;
+            height: 170vh;
+            &-name {
+                margin-top: 160px;
+                width: 70%;
+            }
             &-poster {
                 height: 250px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                top: 90vh;
+                top: 110vh;
             }
             &-img{
                 display: none;
@@ -306,10 +310,10 @@
 @media screen and (max-width: 1100px) {
     .header {
         &__content {
-            height: 140vh;
+            height: 160vh;
             &-name {
-                margin-top: 200px;
-                width: 60%;
+                margin-top: 150px;
+                width: 80%;
             }
             &-poster {
                 height: 150px;
@@ -317,7 +321,7 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                top: 107vh;
+                top: 113vh;
             }
             &-img{
                 display: none;
@@ -335,29 +339,39 @@
         }
     }
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 755px) {
+    
+    .menu__btn {
+        top: 20px;
+    }
     .header {
         &__top {
+            height: 65px;
             &-logo{
                 left: 40%;
+                top:  25px;
             }
+            &-button {
+                display: none;
+            }
+            
         }
         &__content {
-            height: 100vh;
+            height: 130vh;
             &-name {
-                margin-top: 150px;
+                margin-top: 130px;
                 width: 70%;
             }
             &-title {
                 font-size: 45px;
             }
             &-poster {
-                height: 130px;
+                height: 100px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                top: 75vh;
+                top: 102vh;
             }
             &-img{
                 display: none;
@@ -365,12 +379,94 @@
             &-text {
                 width:80%;
                 left: 10%;
-                top: 45px;
+                top: 35px;
                 
             }
             &-question {
                 font-size: 35px;
                 text-align: center;
+            }
+        }
+    }
+}
+@media screen and (max-width: 550px) {
+    .header {
+        &__content {
+            &-title {
+                font-size: 35px;
+            }
+            &-button {
+                width: 190px;
+                height: 50px;
+                font-size: 18px;
+            }
+            
+            &-question {
+                font-size: 28px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 390px) {
+    .header {
+        &__top  {
+            &-logo  {
+                left: 55%;
+            }
+        }
+        &__content {
+            height: 80vh;;
+            &-title {
+                font-size: 32px;
+            }
+            &-button {
+                width: 170px;
+                height: 50px;
+                font-size: 15px;
+            }
+            &-poster {
+                height: 80px;
+                top: 58vh;
+            }
+            &-text {
+                top: 28px;
+            }
+            &-question {
+                font-size: 25px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 345px) {
+    .header {
+        &__top  {
+            &-logo  {
+                left: 50%;
+            }
+        }
+        &__content {
+            height: 75vh;
+            &-title {
+                font-size: 32px;
+            }
+            &-name {
+                width: 85%;
+                margin-top: 100px;
+            }
+            &-button {
+                width: 150px;
+                height: 40px;
+                font-size: 13px;
+            }
+            &-poster {
+                height: 60px;
+                top: 53vh;
+            }
+            &-text {
+                top: 20px;
+            }
+            &-question {
+                font-size: 20px;
             }
         }
     }

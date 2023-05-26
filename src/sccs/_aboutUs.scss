@@ -2,7 +2,7 @@
     max-height: 1104px;
     width: 100%;
     background-color: black;
-    
+    padding-bottom: 50px;
 
     &__introduction {
         //width: 673px;
@@ -12,6 +12,7 @@
         justify-content: center;
         align-items: center;
         padding-top: 180px;
+        
         &-firstText {
             font-family: 'Inter-Medium';
             font-size: 20px;
@@ -19,6 +20,7 @@
             color: #FFFFFF;
             padding-top: 257px;
             text-align: center;
+            
             
         }
         &-secondText {
@@ -86,7 +88,7 @@
 @media screen and (max-width: 750px) {
     .aboutUs {
         &__introduction {
-            padding-top: 150px;
+            padding-top: 120px;
             margin-left: 6%;
             margin-right: 6%;
             &-content{
@@ -110,6 +112,32 @@
             }
             &-text {
                 font-size: 18px;
+                text-align: center;
+            }
+        }
+    }
+}
+@media screen and (max-width: 550px) {
+    .aboutUs {
+        &__introduction {
+            padding-top: 100px;
+            &-text {
+                font-size: 14px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    .aboutUs {
+        &__introduction {
+            padding-top: 100px;
+            &-title {
+                width: 120px;
+                font-size: 18px;
+                height: 39px;
+            }
+            &-text {
+                font-size: 12px;
                 
             }
         }

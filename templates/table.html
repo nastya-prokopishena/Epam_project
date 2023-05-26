@@ -60,6 +60,7 @@
       top: 0px;
       border: 1px solid #000000;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      z-index: 999;
     }
     .header__top-logo {
       position: absolute;
@@ -139,14 +140,15 @@
     h1 {
       font-family: "Newsreader-Regular";
       font-size: 64px;
-      line-height: 100%;
+      //line-height: 100%;
       color: black;
       display: flex;
       align-items: flex-end;
       letter-spacing: -0.02em;
-      height: 77px;
+      //height: 60px;
       margin-left: 4%;
-      bottom: 16px;
+      margin-top: 5px;
+      margin-bottom: 20px;
     }
     /* Styling for the modal */
     .modal {
@@ -171,6 +173,7 @@
     .booking_instuction {
       float: right;
       position: relative;
+      overflow: auto;
       margin-right: 5%;
       width: 20%;
     }
@@ -185,18 +188,151 @@
       font-size: 20px;
       color: #1f2f11;
     }
-    
+    .hamburger-menu {
+      display: none;
+    }
     @media screen and (max-width: 1920px) {
       .header__top-list {
         margin-right: 20%;
       }
     }
+    @media screen and (max-width: 1200px) {
+      .header__top{
+        height: 100px;
+      }
+    }
+    @media screen and (max-width: 1000px) {
+      .header__top-list {
+        display: none;
+      }
+      .header__top-logo {
+        left: 45%;
+      }
+      .hamburger-menu {
+        display: block;
+      }
+      #menu__toggle {
+        opacity: 0;
+      }
+      #menu__toggle:checked ~ .menu__btn > span {
+        transform: rotate(45deg);
+      }
+      #menu__toggle:checked ~ .menu__btn > span::before {
+        top: 0;
+        transform: rotate(0);
+      }
+      #menu__toggle:checked ~ .menu__btn > span::after {
+        top: 0;
+        transform: rotate(90deg);
+      }
+      #menu__toggle:checked ~ .menu__box {
+        visibility: visible;
+        left: 0;
+      }
+      .menu__btn {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 40px;
+        left: 22px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        z-index: 100;
+      }
+      .menu__btn > span,
+      .menu__btn > span::before,
+      .menu__btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: #426B1F;
+        transition-duration: 0.25s;
+      }
+      .menu__btn > span::before {
+        content: "";
+        top: -8px;
+        background-color: #426B1F;
+      }
+      .menu__btn > span::after {
+        content: "";
+        top: 8px;
+        background-color: #426B1F;
+      }
+      .menu__box {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 35vh;
+        height: 100%;
+        margin: 0;
+        padding: 110px 0;
+        list-style: none;
+        background-color: #537536;
+        box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+        transition-duration: 0.25s;
+        z-index: 99;
+      }
+      .menu__item {
+        display: block;
+        padding: 12px 24px;
+        color: white;
+        font-family: "Inter-Regular";
+        font-size: 20px;
+        text-decoration: none;
+        transition-duration: 0.25s;
+      }
+      .menu__item:hover {
+        background-color: white;
+        color: #426B1F;
+        font-family: "Inter-Regular";
+      }
+      .menu__item:active {
+        background-color: #426B1F;
+        color: white;
+        font-family: "Inter-Regular";
+        border: 1px solid white;
+      }
+      .table-container {
+        width:95%;
+        margin-left: 12%;
+      }
+      .booking_instuction {
+        margin-left: 10%;
+        float: none;
+        padding-top: 60px;
+        width: 80%;
+        text-align: center;
+      }
+    }
+    @media screen and (max-width: 750px){
+      .header__top-button{
+        display: none;
+      }
+    } 
+  
   </style>
 </head>
 <body>
   <div class="header__top">
+    <div class="hamburger-menu">
+      <input id="menu__toggle" type="checkbox" >
+      <label class="menu__btn" for="menu__toggle">
+          <span></span>
+      </label>
+      <ul class="menu__box">
+          <li><a class="menu__item" href="#aboutUs">About us</a></li>
+          <li><a class="menu__item" href="#menu">Menu</a></li>
+          <li><a class="menu__item" href="#discounts">Discounts</a></li>
+          <li><a class="menu__item" href="#myProfile">My profile</a></li>
+      </ul>
+  </div>
     <div class="header__top-logo">
-      <a class="header__top-logo-link" href="#">
+      <a class="header__top-logo-link" href="/dist/index.html">
         <p class="header__top-logo-text">New York</p>
       </a>
     </div>
@@ -206,13 +342,13 @@
                 <a class="header__top-list-link active" href="/dist/index.html">About us</a>
             </li>
             <li class="header__top-list-item">
-                <a class="header__top-list-link" href="/dist/index.html" href="#menu">Menu</a>
+                <a class="header__top-list-link" href="/dist/index.html" >Menu</a>
             </li>
             <li class="header__top-list-item">
-                <a class="header__top-list-link" href="#discounts">Discounts</a>
+                <a class="header__top-list-link" href="/dist/index.html">Discounts</a>
             </li>
             <li class="header__top-list-item">
-                <a class="header__top-list-link" href="#myProfile">My profile</a>
+                <a class="header__top-list-link" href="/dist/index.html">My profile</a>
             </li>
         </ul>
         
